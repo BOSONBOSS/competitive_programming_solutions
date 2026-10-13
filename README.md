@@ -76,21 +76,3 @@ g++ -O2 -std=c++20 path/to/solution.cpp -o solution
 ```
 
 ---
-
-## Solution Template Convention
-
-Each problem file includes the problem link and complexity analysis:
-
-```cpp
-/**
- * Problem: LeetCode 0525 - Contiguous Array
- * URL: https://leetcode.com/problems/contiguous-array/
- * Time Complexity: O(N)
- * Space Complexity: O(N)
- */
-
-#include <bits/stdc++.h>
-using namespace std;
-
-// Solution implementation
-```
