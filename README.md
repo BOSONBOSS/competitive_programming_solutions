@@ -30,6 +30,7 @@ competitive_programming_solutions/
 │   ├── prefix-sum/
 │   ├── 2d-arrays/
 │   ├── two-pointers/
+│   ├── hash-map/
 │   └── ...
 ├── geeksforgeeks.org/
 │   ├── arrays/
