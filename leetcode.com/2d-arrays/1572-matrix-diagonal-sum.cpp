@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    int diagonalSum(vector<vector<int>>& mat) {
+        int n=mat.size();
+        int sum=0;
+
+        for(int i=0;i<=n-1;i++){
+            //primary diagonal add;j=i
+            sum+=mat[i][i];
+
+            // secondary diaginal add j=n-1-i
+            sum+=mat[i][n-1-i];
+            //if n is odd, subtract mddle element mat[n/2,n/2] once form sum
+        }
+        //check
+        //if n is odd, subtract mddle element mat[n/2,n/2] once form sum
+        if(n%2==1){
+                sum-=mat[n/2][n/2];
+        }
+        return sum;
+    }
+};
+
+int main(){
+    int n;
+    cin>>n;
+    vector <vector<int>> mat(n,vector<int> (n));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin>>mat[i][j];
+        }
+    }
+
+    Solution obj;
+    cout<< obj.diagonalSum(mat)<<endl;
+    return 0;
+}
