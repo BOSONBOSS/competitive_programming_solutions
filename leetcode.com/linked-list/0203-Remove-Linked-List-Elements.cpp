@@ -43,7 +43,7 @@ public:
                 curr=curr->next;
             }
         }
-        // The real head is whatever is after the dummy node
+        // real head is whatever is after the dummy node
         Node* newHead = dummy->next;
         delete dummy; // clean up the dummy node
         return newHead;
@@ -59,11 +59,32 @@ void printList(Node* head){
 }
 
 
-int main(){
-    int n;cin>>n;
-    if(n==0)return 0;
-    
+// --- 4. Main function (Your 1H-2T-3L-4C Method) ---
+int main() {
+    int n;
+    cin >> n;
 
+    // 1. Read the list first
+    if (n == 0) return 0;
+    int num;
+    cin >> num;
+    Node* head = new Node(num);
+    Node* tail = head;
+
+    for (int i = 1; i < n; i++) {
+        cin >> num;
+        tail->next = new Node(num);
+        tail = tail->next;
+    }
+
+    // 2. Read the target value to remove AFTER the list
+    int val;
+    cin >> val;
+
+    // 3. Call and print
+    Solution obj;
+    Node* newHead = obj.removeElements(head, val);
+    printList(newHead);
 
     return 0;
 }
